@@ -103,6 +103,8 @@
       display: flex;
       gap: 1rem;
       align-items: center;
+      display: flex;
+      justify-content:space-between;
     }
 
     .blog_actions button {
@@ -112,6 +114,7 @@
       padding: 0.5rem 1rem;
       border-radius: 5px;
       cursor: pointer;
+      
     }
 
     .blog_image {
@@ -315,6 +318,23 @@
   border-top: 1px solid #333;
   padding-top: 15px;
   font-size: 14px;
+}
+.buy_button {
+  display: inline-block;
+  background-color: #ff6a00;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.buy_button:hover {
+  background-color: #e55d00;
+  transform: scale(1.05);
 }
 
 
