@@ -42,21 +42,6 @@
       cursor: pointer;
     }
 
-    nav.hot_topics {
-      background: #fff;
-      padding: 0.5rem 1rem;
-      text-align: center;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      margin-bottom: 1rem;
-    }
-
-    nav.hot_topics a {
-      margin: 0 10px;
-      color: #4a90e2;
-      text-decoration: none;
-      font-weight: 500;
-    }
-
     .detail_container {
       max-width: 1200px;
       margin: 2rem auto;
