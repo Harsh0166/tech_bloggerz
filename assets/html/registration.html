@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login & Register | Blog</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link rel="stylesheet" href="../css/style3.css">
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- Login Form -->
+    <form id="loginForm" class="form active">
+        <center><h3>Login</h3></center><br>
+      <div class="form_group">
+        <input type="email" placeholder="Email" required />
+        <i class="fas fa-envelope"></i>
+      </div>
+      <div class="form_group">
+        <input type="password" placeholder="Password" required />
+        <i class="fas fa-lock"></i>
+      </div>
+      <button type="submit" class="submit_btn">Login</button>
+      <div class="form_group">
+        <p><a href="#">Don't have an account ? <button id="registerToggle">Register</button></a></p>
+        <p><a href="#">Forgot Password?</a></p>
+      </div>
+    </form>
+
+    <!-- Register Form -->
+    <form id="registerForm" class="form">
+         <center><h3>Register</h3></center><br>
+      <div class="form_group">
+        <input type="text" placeholder="Full Name" required />
+        <i class="fas fa-user"></i>
+      </div>
+      <div class="form_group">
+        <input type="email" placeholder="Email" required />
+        <i class="fas fa-envelope"></i>
+      </div>
+      <div class="form_group">
+        <input type="password" placeholder="Password" required />
+        <i class="fas fa-lock"></i>
+      </div>
+      <div class="form_group">
+        <input type="password" placeholder="Confirm Password" required />
+        <i class="fas fa-lock"></i>
+      </div>
+      <button type="submit" class="submit_btn">Register</button>
+      <div class="form_group">
+        <p><a href="#">Already have an account ? <button id="loginToggle" class="active">Login</button></p>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    const loginToggle = document.getElementById("loginToggle");
+    const registerToggle = document.getElementById("registerToggle");
+    const loginForm = document.getElementById("loginForm");
+    const registerForm = document.getElementById("registerForm");
+
+    loginToggle.addEventListener("click", () => {
+      loginToggle.classList.add("active");
+      registerToggle.classList.remove("active");
+      loginForm.classList.add("active");
+      registerForm.classList.remove("active");
+    });
+
+    registerToggle.addEventListener("click", () => {
+      registerToggle.classList.add("active");
+      loginToggle.classList.remove("active");
+      registerForm.classList.add("active");
+      loginForm.classList.remove("active");
+    });
+  </script>
+
+</body>
+</html>

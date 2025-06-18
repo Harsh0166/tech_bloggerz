@@ -1,0 +1,117 @@
+* {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family:sans-serif;
+      background: #4a90e2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 420px;
+      background: #fff;
+      padding: 40px 30px;
+      border-radius: 16px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+      position: relative;
+    }
+
+    .form_toggle {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .form_toggle button {
+      background: none;
+      border: none;
+      font-size: 18px;
+      font-weight: 600;
+      margin: 0 10px;
+      cursor: pointer;
+      background: #3f7cc2;
+      transition: 0.3s;
+    }
+
+    .form_toggle button.active {
+      border-bottom: 2px solid #3f7cc2;
+    }
+
+    .form_group {
+      position: relative;
+      margin-bottom: 20px;
+    }
+
+    .form_group input {
+      width: 100%;
+      padding: 12px 40px 12px 15px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 15px;
+    }
+
+    .form_group i {
+      position: absolute;
+      top: 50%;
+      right: 15px;
+      transform: translateY(-50%);
+      color: #888;
+    }
+
+    button.submit_btn {
+      width: 100%;
+      background: #4a90e2;
+      color: white;
+      border: none;
+      padding: 12px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button.submit_btn:hover {
+      background-color: #3f7cc2;
+    }
+
+    .form_group p {
+      font-size: 14px;
+      text-align: center;
+      margin-top: 15px;
+    }
+
+    .form_group p a {
+      color: #4a90e2;
+
+      text-decoration: none;
+    }
+
+    .form {
+      display: none;
+    }
+
+    .form.active {
+      display: block;
+    }
+    #loginForm #registerToggle, #loginToggle {
+  background-color: transparent;
+      color: #4a90e2;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+#loginForm #registerToggle:hover,#loginToggle:hover {
+  color: #3f7cc2;
+}
