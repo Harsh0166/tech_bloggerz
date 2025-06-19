@@ -12,7 +12,7 @@
     }
 
     header {
-      background: #4a90e2;
+      background: #292a2a;
       color: white;
       padding: 1rem;
       text-align: center;
@@ -32,11 +32,13 @@
       border: 1px solid #ccc;
       border-radius: 4px 0 0 4px;
     }
-
+.search_bar input:focus{
+  outline: none;
+}
     .search_bar button {
       padding: 0.5rem 1rem;
       border: none;
-      background: #333;
+      background: #3565d1;
       color: white;
       border-radius: 0 4px 4px 0;
       cursor: pointer;
@@ -64,7 +66,7 @@
   overflow-x: auto;
   gap: 15px;
   flex: 1;
-  scrollbar-width: thin;
+  scrollbar-width: auto;
   scroll-behavior: smooth;
 }
 
@@ -277,7 +279,8 @@
     }
 
 .footer {
-  background-color: #1a1a1a;
+  background-color: #292a2a;
+
   color: #f0f0f0;
   padding: 40px 20px 20px;
   font-family: Arial, sans-serif;
