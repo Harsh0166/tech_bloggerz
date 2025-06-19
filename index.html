@@ -11,9 +11,13 @@
   <header>
     <h1>"ॐ"</h1>
     <div class="search_bar">
-      <input type="text" placeholder="Search blogs...">
-      <button>Search</button>
-    </div>
+  <div class="animated_input">
+    <input id="search_bar_input" type="text">
+    <label id="animated_placeholder">Search blogs...</label>
+  </div>
+  <button>Search</button>
+</div>
+
   </header>
 
   <nav class="hot_topics">
@@ -147,4 +151,32 @@
   </div>
 </footer>
 </body>
+<script>
+  const data = ["Search Technology", "Search Lifestyle", "Search Education", "Search Health"];
+  let index = 0;
+
+  function animatePlaceholder() {
+    const inputBox = document.querySelector(".animated_input");
+    const label = document.getElementById("animated_placeholder");
+
+    // Fade out
+    inputBox.classList.remove("fade-in");
+    inputBox.classList.add("fade-out");
+
+    setTimeout(() => {
+      // Change text
+      index = (index + 1) % data.length;
+      label.textContent = data[index];
+
+  
+      inputBox.classList.remove("fade-out");
+      inputBox.classList.add("fade-in");
+    }, 400); 
+  }
+
+  window.onload = () => {
+    setInterval(animatePlaceholder, 5000);
+  };
+</script>
+
 </html>

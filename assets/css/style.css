@@ -10,6 +10,39 @@
       color: #333;
       line-height: 1.6;
     }
+.animated_input {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.animated_input input {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+}
+
+.animated_input label {
+  position: absolute;
+  top: 20%;
+  left: 60px;
+  transform: translateY(-50%);
+  color: #888;
+  font-size: 16px;
+  pointer-events: none;
+  transition: all 0.4s ease;
+  opacity: 1;
+}
+
+.animated_input.fade-out label {
+  opacity: 0;
+  transform: translateY(-150%);
+}
+
+.animated_input.fade-in label {
+  opacity: 1;
+  transform: translateY(0);
+}
 
     header {
       background: #292a2a;
