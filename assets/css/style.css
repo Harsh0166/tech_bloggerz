@@ -340,6 +340,13 @@
 }
 
 .footer_section ul {
+  width: 100%;
+  list-style: none;
+  padding: 0;
+  display: flex;
+}
+.footer_section ul div {
+  width:20%;
   list-style: none;
   padding: 0;
 }
@@ -348,7 +355,7 @@
   color: #ccc;
   text-decoration: none;
   display: block;
-  margin: 8px 0;
+  /* margin: 8px 0; */
   transition: 0.3s;
 }
 
