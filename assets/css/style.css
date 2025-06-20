@@ -315,7 +315,7 @@
   background-color: #292a2a;
 
   color: #f0f0f0;
-  padding: 40px 20px 20px;
+  padding: 20px 20px 0px;
   font-family: Arial, sans-serif;
 }
 
@@ -378,8 +378,8 @@
 
 .footer_bottom {
   text-align: center;
-  margin-top: 20px;
+  /* margin-top: 10px; */
   border-top: 1px solid #333;
-  padding-top: 15px;
+  /* padding-top: 15px; */
   font-size: 14px;
 }
