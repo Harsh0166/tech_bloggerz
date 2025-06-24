@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="../css/style2.css">
   <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../js/script.js">
 
   <style>
     
@@ -15,11 +16,16 @@
 </head>
 <body>
   <header>
-    <h1>My Awesome Blog</h1>
+    <h1>"ॐ"</h1>
     <div class="search_bar">
-      <input type="text" placeholder="Search blog posts...">
-      <button>Search</button>
-    </div>
+<div class="animated_input fade-in">
+  <input type="text" placeholder=" " id="searchInput" />
+  <label for="searchInput" id="animated_placeholder">Search Technology</label>
+</div>
+
+  <button>Search</button>
+</div>
+
   </header>
 
   <nav class="hot_topics">
@@ -47,7 +53,7 @@
   </div>
 
  <div class="right_nav">
-   <button class="subscribe_btn">Subscribe Now</button>
+   
 
   <div class="dropdown_wrapper">
     <select id="topics" class="topic_dropdown">
@@ -105,48 +111,57 @@
 
   <section class="related_posts">
     <h3>Related Posts</h3>
-    <div class="related_grid">
-      <div class="related_box">
-        <img src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg" alt="Related Blog">
-        <div class="content">
-          <h4>10 Tips for a Healthier Lifestyle</h4>
-          <p>Discover daily habits to boost your health and well-being.</p>
-          <a href="#">Read More</a>
-        </div>
-      </div>
-      <div class="related_box">
-        <img src="https://images.pexels.com/photos/256541/pexels-photo-256541.jpeg" alt="Related Blog">
-        <div class="content">
-          <h4>Top Financial Planning Strategies</h4>
-          <p>Learn the secrets to long-term financial success and stability.</p>
-          <a href="#">Read More</a>
-        </div>
+    <section class="grid_posts">
+    <div class="blog_box">
+      <img src="https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg" alt="Blog Image">
+      <div class="content">
+        <h3>Exploring the Future of AI</h3>
+        <p>An overview of how artificial intelligence is shaping the modern world.</p>
+        <a href="#">Read More</a>
       </div>
     </div>
+    <div class="blog_box">
+      <img src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg" alt="Blog Image">
+      <div class="content">
+        <h3>10 Tips for a Healthier Lifestyle</h3>
+        <p>Discover daily habits to boost your health and well-being.</p>
+        <a href="#">Read More</a>
+      </div>
+    </div>
+    <div class="blog_box">
+      <img src="https://images.pexels.com/photos/256541/pexels-photo-256541.jpeg" alt="Blog Image">
+      <div class="content">
+        <h3>Top Financial Planning Strategies</h3>
+        <p>Learn the secrets to long-term financial success and stability.</p>
+        <a href="#">Read More</a>
+      </div>
+    </div>
+  </section>
   </section>
 <footer class="footer">
   <div class="footer_container">
     <div class="footer_section">
-      <h3>Quick Links</h3>
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/blogs.html">Blogs</a></li>
-        <li><a href="/about.html">About Us</a></li>
-        <li><a href="/contact.html">Contact</a></li>
-      </ul>
-    </div>
+  <h3>Quick Links</h3>
+  <ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="/blogs.html">Blogs</a></li>
+    <li><a href="/about.html">About Us</a></li>
+    <li><a href="/contact.html">Contact</a></li>
+
+  </ul>
+</div>
 
     <div class="footer_section">
       <h3>Contact</h3>
       <p>Email: <a href="mailto:example@email.com">example@email.com</a></p>
-      <p>WhatsApp: <a href="https://wa.me/91XXXXXXXXXX" target="_blank">+91 XXXXX-XXXXX</a></p>
+      <!-- <p>WhatsApp: <a href="https://wa.me/91XXXXXXXXXX" target="_blank">+91 XXXXX-XXXXX</a></p> -->
     </div>
 
     <div class="footer_section">
       <h3>Follow Us</h3>
       <div class="social_icons">
         <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-        <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+        <!-- <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-whatsapp"></i></a> -->
         <a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
         <a href="https://www.linkedin.com/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
         <a href="https://www.linkedin.com/" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
@@ -158,6 +173,6 @@
     <p>&copy; 2025 Your Blog Name. All rights reserved.</p>
   </div>
 </footer>
-
+<script src="../js/script.js"></script>
 </body>
 </html>

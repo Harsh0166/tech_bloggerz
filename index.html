@@ -11,10 +11,11 @@
   <header>
     <h1>"ॐ"</h1>
     <div class="search_bar">
-  <div class="animated_input">
-    <input id="search_bar_input" type="text">
-    <label id="animated_placeholder">Search blogs...</label>
-  </div>
+<div class="animated_input fade-in">
+  <input type="text" placeholder=" " id="searchInput" />
+  <label for="searchInput" id="animated_placeholder">Search Technology</label>
+</div>
+
   <button>Search</button>
 </div>
 
@@ -64,13 +65,41 @@
 
 
   <div class="container">
-    <div class="main_post">
-      <img src="https://images.pexels.com/photos/4008997/pexels-photo-4008997.jpeg" alt="Main Blog Post">
-      <div class="text_content">
-        <h2>Small Business Employee Benefits UK: What to Offer + Tips</h2>
-        <p>August 9, 2024</p>
+     <section class="main_grid_posts">
+    <div class="blog_box">
+      <img src="https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg" alt="Blog Image">
+      <div class="content">
+        <h3>Exploring the Future of AI</h3>
+        <p>An overview of how artificial intelligence is shaping the modern world.</p>
+        <a href="#">Read More</a>
       </div>
     </div>
+    <div class="blog_box">
+      <img src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg" alt="Blog Image">
+      <div class="content">
+        <h3>10 Tips for a Healthier Lifestyle</h3>
+        <p>Discover daily habits to boost your health and well-being.</p>
+        <a href="#">Read More</a>
+      </div>
+    </div>
+    <div class="blog_box">
+      <img src="https://images.pexels.com/photos/256541/pexels-photo-256541.jpeg" alt="Blog Image">
+      <div class="content">
+        <h3>Top Financial Planning Strategies</h3>
+        <p>Learn the secrets to long-term financial success and stability.</p>
+        <a href="#">Read More</a>
+      </div>
+    </div>
+     <div class="blog_box">
+      <img src="https://images.pexels.com/photos/256541/pexels-photo-256541.jpeg" alt="Blog Image">
+      <div class="content">
+        <h3>Top Financial Planning Strategies</h3>
+        <p>Learn the secrets to long-term financial success and stability.</p>
+        <a href="#">Read More</a>
+      </div>
+    </div>
+    
+  </section>
     <div class="sidebar">
       <div class="sidebar_post">
         <img src="https://images.pexels.com/photos/3184298/pexels-photo-3184298.jpeg" alt="">
@@ -119,30 +148,28 @@
   <footer class="footer">
   <div class="footer_container">
     <div class="footer_section">
-      <h3>Quick Links</h3>
-      <ul>
-        <div>
-          <li><a href="/">Home</a></li>
-        <li><a href="/blogs.html">Blogs</a></li>
-        </div>
-        <div>
-          <li><a href="/about.html">About Us</a></li>
-        <li><a href="/contact.html">Contact</a></li>
-        </div>
-      </ul>
-    </div>
+  <h3>Quick Links</h3>
+  <ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="/blogs.html">Blogs</a></li>
+    <li><a href="/about.html">About Us</a></li>
+    <li><a href="/contact.html">Contact</a></li>
+
+  </ul>
+</div>
+
 
     <div class="footer_section">
       <h3>Contact</h3>
       <p>Email: <a href="mailto:example@email.com">example@email.com</a></p>
-      <p>WhatsApp: <a href="https://wa.me/91XXXXXXXXXX" target="_blank">+91 XXXXX-XXXXX</a></p>
+      <!-- <p>WhatsApp: <a href="https://wa.me/91XXXXXXXXXX" target="_blank">+91 XXXXX-XXXXX</a></p> -->
     </div>
 
     <div class="footer_section">
       <h3>Follow Us</h3>
       <div class="social_icons">
         <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-        <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+        <!-- <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-whatsapp"></i></a> -->
         <a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
         <a href="https://www.linkedin.com/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
         <a href="https://www.linkedin.com/" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
@@ -154,33 +181,6 @@
     <p>&copy; 2025 Your Blog Name. All rights reserved.</p>
   </div>
 </footer>
+<script src="assets/js/script.js"></script>
 </body>
-<script>
-  const data = ["Search Technology", "Search Lifestyle", "Search Education", "Search Health"];
-  let index = 0;
-
-  function animatePlaceholder() {
-    const inputBox = document.querySelector(".animated_input");
-    const label = document.getElementById("animated_placeholder");
-
-    // Fade out
-    inputBox.classList.remove("fade-in");
-    inputBox.classList.add("fade-out");
-
-    setTimeout(() => {
-      // Change text
-      index = (index + 1) % data.length;
-      label.textContent = data[index];
-
-  
-      inputBox.classList.remove("fade-out");
-      inputBox.classList.add("fade-in");
-    }, 400); 
-  }
-
-  window.onload = () => {
-    setInterval(animatePlaceholder, 5000);
-  };
-</script>
-
 </html>
