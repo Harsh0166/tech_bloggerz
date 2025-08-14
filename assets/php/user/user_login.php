@@ -1,3 +1,8 @@
+<?php
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,21 +10,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Login & Register | Blog</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-  <link rel="stylesheet" href="../css/style3.css">
+  <link rel="stylesheet" href="../../css/style3.css">
 </head>
 <body>
 
   <div class="container">
 
     <!-- Login Form -->
-    <form id="loginForm" class="form active">
+    <form id="loginForm" class="form active" action="login_checker.php" method="POST">
         <center><h3>Login</h3></center><br>
       <div class="form_group">
-        <input type="email" placeholder="Email" required />
+        <input type="email" placeholder="Email" name="email" required />
         <i class="fas fa-envelope"></i>
       </div>
       <div class="form_group">
-        <input type="password" placeholder="Password" required />
+        <input type="password" placeholder="Password" name="password" required />
         <i class="fas fa-lock"></i>
       </div>
       <button type="submit" class="submit_btn">Login</button>
@@ -30,22 +35,18 @@
     </form>
 
     <!-- Register Form -->
-    <form id="registerForm" class="form">
+    <form id="registerForm" class="form" action="registeration_checker.php" method="POST">
          <center><h3>Register</h3></center><br>
       <div class="form_group">
-        <input type="text" placeholder="Full Name" required />
+        <input type="text" placeholder="Full Name" name="name" required />
         <i class="fas fa-user"></i>
       </div>
       <div class="form_group">
-        <input type="email" placeholder="Email" required />
+        <input type="email" placeholder="Email" name="email" required />
         <i class="fas fa-envelope"></i>
       </div>
       <div class="form_group">
-        <input type="password" placeholder="Password" required />
-        <i class="fas fa-lock"></i>
-      </div>
-      <div class="form_group">
-        <input type="password" placeholder="Confirm Password" required />
+        <input type="password" placeholder="Password" name="password" required />
         <i class="fas fa-lock"></i>
       </div>
       <button type="submit" class="submit_btn">Register</button>
