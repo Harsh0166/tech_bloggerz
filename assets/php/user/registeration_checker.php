@@ -10,10 +10,13 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     $register_result = mysqli_query($conn,$register_sql);
 
     if($register_result){
-        echo "inserted";
+        header("Location: user_login.php");
     }
     else{
-        echo "not";
+        echo '
+        <script>alert("Something Went Wrong !")
+        window.location.href = "user_login.php";
+        </script>';
     }
 
 }

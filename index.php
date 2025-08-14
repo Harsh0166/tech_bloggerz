@@ -1,3 +1,14 @@
+<?php
+include_once("assets/php/connection.php");
+
+if(!isset($_SESSION['username'])){
+  header("Location: assets/php/user/user_login.php");
+}
+$show_post_sql = "SELECT * FROM `add_post`";
+$show_post_result = mysqli_query($conn,$show_post_sql);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -61,88 +72,27 @@
   </div>
  </div>
 </nav>
-
-
-
-  <div class="container">
-     <section class="main_grid_posts">
-    <div class="blog_box">
-      <img src="https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg" alt="Blog Image">
-      <div class="content">
-        <h3>Exploring the Future of AI</h3>
-        <p>An overview of how artificial intelligence is shaping the modern world.</p>
-        <a href="#">Read More</a>
-      </div>
-    </div>
-    <div class="blog_box">
-      <img src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg" alt="Blog Image">
-      <div class="content">
-        <h3>10 Tips for a Healthier Lifestyle</h3>
-        <p>Discover daily habits to boost your health and well-being.</p>
-        <a href="#">Read More</a>
-      </div>
-    </div>
-    <div class="blog_box">
-      <img src="https://images.pexels.com/photos/256541/pexels-photo-256541.jpeg" alt="Blog Image">
-      <div class="content">
-        <h3>Top Financial Planning Strategies</h3>
-        <p>Learn the secrets to long-term financial success and stability.</p>
-        <a href="#">Read More</a>
-      </div>
-    </div>
-     <div class="blog_box">
-      <img src="https://images.pexels.com/photos/256541/pexels-photo-256541.jpeg" alt="Blog Image">
-      <div class="content">
-        <h3>Top Financial Planning Strategies</h3>
-        <p>Learn the secrets to long-term financial success and stability.</p>
-        <a href="#">Read More</a>
-      </div>
-    </div>
-    
-  </section>
-    <div class="sidebar">
-      <div class="sidebar_post">
-        <img src="https://images.pexels.com/photos/3184298/pexels-photo-3184298.jpeg" alt="">
-        <div class="text">
-          <h4>8 Must-Have Employee Benefits for UK Startups</h4>
-          <p>August 9, 2024</p>
-        </div>
-      </div>
-      <div class="sidebar_post">
-        <img src="https://images.pexels.com/photos/6476584/pexels-photo-6476584.jpeg" alt="">
-        <div class="text">
-          <h4>Introducing Pension Switch: Move your existing pension</h4>
-          <p>July 17, 2024</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <section class="grid_posts">
-    <div class="blog_box">
+
+<?php
+  while($row = $show_post_result->fetch_assoc()){
+    $title = $row['title'];
+    $sub_content = $row['sub_content'];
+    $image = $row['image'];
+
+    echo '
+  <div class="blog_box">
       <img src="https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg" alt="Blog Image">
       <div class="content">
-        <h3>Exploring the Future of AI</h3>
-        <p>An overview of how artificial intelligence is shaping the modern world.</p>
-        <a href="#">Read More</a>
+        <h3>'.$title.'</h3>
+        <p>'.$sub_content.'</p>
+        <a href="#">Read  More</a>
       </div>
-    </div>
-    <div class="blog_box">
-      <img src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg" alt="Blog Image">
-      <div class="content">
-        <h3>10 Tips for a Healthier Lifestyle</h3>
-        <p>Discover daily habits to boost your health and well-being.</p>
-        <a href="#">Read More</a>
-      </div>
-    </div>
-    <div class="blog_box">
-      <img src="https://images.pexels.com/photos/256541/pexels-photo-256541.jpeg" alt="Blog Image">
-      <div class="content">
-        <h3>Top Financial Planning Strategies</h3>
-        <p>Learn the secrets to long-term financial success and stability.</p>
-        <a href="#">Read More</a>
-      </div>
-    </div>
+    </div>';
+  }
+
+?>
+    
   </section>
 
   <footer class="footer">
