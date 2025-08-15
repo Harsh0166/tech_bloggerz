@@ -1,6 +1,11 @@
 <?php
 include_once("../connection.php");
 
+if(!isset($_SESSION['username'])){
+  header("Location: admin_login.php");
+}
+
+
 if($_SERVER["REQUEST_METHOD"]=="POST"){
     $title = $_POST['title'];
     $category = $_POST['category'];

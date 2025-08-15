@@ -6,7 +6,12 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     $email = $_POST['email'];
     $password = md5($_POST['password']);
 
-    $register_sql ="INSERT INTO `registration`(`sno`, `username`, `email`, `password`) VALUES (NULL,'$name','$email','$password')";
+    $checker_sql ="SELECT * FROM `registration` WHERE `email` = '$email'";
+    $checker_result = mysqli_query($conn,$checker_sql);
+    $count = mysqli_num_rows($checker_result);
+
+    if($count == 0){
+        $register_sql ="INSERT INTO `registration`(`sno`, `username`, `email`, `password`) VALUES (NULL,'$name','$email','$password')";
     $register_result = mysqli_query($conn,$register_sql);
 
     if($register_result){
@@ -18,6 +23,14 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
         window.location.href = "user_login.php";
         </script>';
     }
+    }
+    else{
+        echo '
+        <script>alert("User Already Exist !")
+        window.location.href = "user_login.php";
+        </script>';
+    }
+    
 
 }
 

@@ -1,3 +1,11 @@
+<?php
+include_once("../connection.php");
+if(!isset($_SESSION['username'])){
+  header("Location: admin_login.php");
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,6 +29,7 @@
         <li><a href="admin_homepage.php">Dashboard</a></li>
         <!-- <li><a href="posts.html">Posts</a></li> -->
         <li><a href="add_post.php" class="active">Add New Post</a></li>
+        <li><a href="admin_logout.php" class="active">Logout</a></li>
         <!-- <li><a href="categories.html">Categories</a></li>
         <li><a href="comments.html">Comments</a></li>
         <li><a href="users.html">Users</a></li>
