@@ -30,18 +30,19 @@ if($_SERVER["REQUEST_METHOD"] == "GET"){
   </style>
 </head>
 <body>
-  <header>
-    <h1>"ॐ"</h1>
-    <div class="search_bar">
-<div class="animated_input fade-in">
-  <input type="text" placeholder=" " id="searchInput" />
-  <label for="searchInput" id="animated_placeholder">Search Technology</label>
-</div>
+ <header class="main-header">
+  <div class="logo">
+    <img src="../../img/logo.png" alt="Logo">
+  </div>
 
-  <button>Search</button>
-</div>
-
-  </header>
+  <div class="search_bar">
+    <div class="animated_input fade-in">
+      <input type="text" placeholder=" " id="searchInput" />
+      <label for="searchInput" id="animated_placeholder">Search Technology</label>
+    </div>
+    <button>Search</button>
+  </div>
+</header>
 
   <nav class="hot_topics">
   <div class="topic_links">
@@ -92,6 +93,7 @@ if($_SERVER["REQUEST_METHOD"] == "GET"){
         $title = $row['title'];
         $content = $row['content'];
         $datetime = $row['date_time'];
+        $category = $row['category'];
         list($date, $time) = explode(" ", $datetime);
 
 
@@ -130,30 +132,31 @@ if($_SERVER["REQUEST_METHOD"] == "GET"){
   <section class="related_posts">
     <h2>Related Posts</h2>
     <section class="grid_posts">
-    <div class="blog_box">
+
+    <?php
+      $related_post_sql = "SELECT * FROM `add_post` WHERE `category`= '$category'";
+      $related_post_result = mysqli_query($conn,$related_post_sql);
+
+      while($row = $related_post_result->fetch_assoc()){
+        $related_title = $row['title'];
+        $related_sub_content = $row['sub_content'];
+        $related_blog_id = $row['sno'];
+
+        if($related_title != $title){
+          echo '<div class="blog_box">
       <img src="https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg" alt="Blog Image">
       <div class="content">
-        <h3>Exploring the Future of AI</h3>
-        <p>An overview of how artificial intelligence is shaping the modern world.</p>
-        <a href="#">Read More</a>
+        <h3>'.$related_title.'</h3>
+        <p>'.$related_sub_content.'</p>
+        <a href="blog_detail.php?blog_id='.$related_blog_id.'">Read More</a>
       </div>
-    </div>
-    <div class="blog_box">
-      <img src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg" alt="Blog Image">
-      <div class="content">
-        <h3>10 Tips for a Healthier Lifestyle</h3>
-        <p>Discover daily habits to boost your health and well-being.</p>
-        <a href="#">Read More</a>
-      </div>
-    </div>
-    <div class="blog_box">
-      <img src="https://images.pexels.com/photos/256541/pexels-photo-256541.jpeg" alt="Blog Image">
-      <div class="content">
-        <h3>Top Financial Planning Strategies</h3>
-        <p>Learn the secrets to long-term financial success and stability.</p>
-        <a href="#">Read More</a>
-      </div>
-    </div>
+    </div>';
+
+      }
+        }
+        
+
+    ?>
   </section>
   </section>
 <footer class="footer">
@@ -161,7 +164,7 @@ if($_SERVER["REQUEST_METHOD"] == "GET"){
     <div class="footer_section">
   <h3>Quick Links</h3>
   <ul>
-    <li><a href="/">Home</a></li>
+    <li><a href="../../../index.php">Home</a></li>
     <li><a href="/blogs.html">Blogs</a></li>
     <li><a href="/about.html">About Us</a></li>
     <li><a href="/contact.html">Contact</a></li>
@@ -191,6 +194,6 @@ if($_SERVER["REQUEST_METHOD"] == "GET"){
     <p>&copy; 2025 Your Blog Name. All rights reserved.</p>
   </div>
 </footer>
-<script src="../js/script.js"></script>
+<script src="../../js/script.js"></script>
 </body>
 </html>

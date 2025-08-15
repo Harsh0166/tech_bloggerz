@@ -17,7 +17,23 @@
   position: relative;
   width: 100%;
 }
+header h1 img {
+  height: 50px;  /* keeps it compact */
+  width: auto;   /* preserves aspect ratio */
+  object-fit: contain;
+}
 
+@media (max-width: 768px) {
+  header h1 img {
+    height: 40px; /* smaller for tablets */
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 img {
+    height: 35px; /* smaller for phones */
+  }
+}
 .animated_input input {
   width: 100%;
   padding: 12px 12px 12px 60px;
@@ -62,39 +78,70 @@
 }
 
 
-    header {
-      background: #292a2a;
-      color: white;
-      padding: 1rem;
-      text-align: center;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-
-    .search_bar {
-      margin: 1rem auto;
-      max-width: 600px;
-      display: flex;
-      justify-content: center;
-    }
-
-    .search_bar input {
-      padding: 0.5rem;
-      flex: 1;
-      border: 1px solid #ccc;
-      border-radius: 4px 0 0 4px;
-    }
-.search_bar input:focus{
-  outline: none;
+  .main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: black;
+  padding: 12px 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  top: 0;
+  z-index: 999;
 }
-    .search_bar button {
-      padding: 0.5rem 1rem;
-      margin: 0;
-      border: none;
-      background: #3565d1;
-      color: white;
-      border-radius: 0 4px 4px 0;
-      cursor: pointer;
-    }
+
+.logo img {
+  height: 50px;
+  width: auto;
+  object-fit: contain;
+}
+
+.search_bar {
+  display: flex;
+  align-items: center;
+}
+
+.search_bar input {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  background: #fff;
+  font-size: 14px;
+  width: 220px;
+  transition: all 0.3s ease;
+}
+
+.search_bar input:focus {
+  width: 260px;
+  box-shadow: 0 0 8px rgba(255,255,255,0.5);
+}
+
+.search_bar button {
+  background: #ff9800;
+  border: none;
+  padding: 8px 16px;
+  color: #fff;
+  font-size: 14px;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.search_bar button:hover {
+  background: #e68a00;
+}
+
+@media (max-width: 768px) {
+  .main-header {
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px;
+  }
+  .search_bar input {
+    width: 100%;
+  }
+}
+
 
     
 
@@ -110,6 +157,8 @@
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   border-bottom: 1px solid #ddd;
   font-family: sans-serif;
+    position: sticky;
+
 }
 
 .topic_links {

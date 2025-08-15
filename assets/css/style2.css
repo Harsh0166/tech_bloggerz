@@ -10,39 +10,7 @@
       color: #333;
       line-height: 1.6;
     }
-
-    header {
-      background: linear-gradient(135deg, #4a90e2, #357abd);
-      color: white;
-      padding: 1rem;
-      text-align: center;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-
-    .search_bar {
-      margin: 1rem auto;
-      max-width: 600px;
-      display: flex;
-      justify-content: center;
-    }
-
-    .search_bar input {
-      padding: 0.5rem;
-      width: 80%;
-      border: 1px solid #ccc;
-      border-radius: 4px 0 0 4px;
-    }
-
-    .search_bar button {
-      padding: 0.5rem 1rem;
-      border: none;
-      background: #333;
-      color: white;
-      border-radius: 0 4px 4px 0;
-      cursor: pointer;
-    }
-
-    .detail_container {
+  .detail_container {
       max-width: 1200px;
       margin: 2rem auto;
       padding: 0 1rem;

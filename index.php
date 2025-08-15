@@ -19,18 +19,20 @@ $show_post_result = mysqli_query($conn,$show_post_sql);
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-  <header>
-    <h1>"ॐ"</h1>
-    <div class="search_bar">
-<div class="animated_input fade-in">
-  <input type="text" placeholder=" " id="searchInput" />
-  <label for="searchInput" id="animated_placeholder">Search Technology</label>
-</div>
+ <header class="main-header">
+  <div class="logo">
+    <img src="assets/img/logo.png" alt="Logo">
+  </div>
 
-  <button>Search</button>
-</div>
- 
-  </header>
+  <div class="search_bar">
+    <div class="animated_input fade-in">
+      <input type="text" placeholder=" " id="searchInput" />
+      <label for="searchInput" id="animated_placeholder">Search Technology</label>
+    </div>
+    <button>Search</button>
+  </div>
+</header>
+
 
   <nav class="hot_topics">
   <div class="topic_links">
