@@ -9,8 +9,18 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     $content = $_POST['content'];
     $image = $_POST['image'];
 
+    $check_category_sql = "SELECT * FROM `category` WHERE `category` = '$category'";
+    $check_category_result = mysqli_query($conn,$check_category_sql);
+    $count = mysqli_num_rows($check_category_result);
+
+    if($count == 0){
+        $add_category_sql = "INSERT INTO `category`(`sno`, `category`) VALUES (NULL,'$category')";
+        mysqli_query($conn,$add_category_sql);
+    }
+
     $add_post_sql = "INSERT INTO `add_post`(`sno`, `title`, `category`, `tags`,`sub_content`, `content`, `image`) VALUES (NULL,'$title','$category','$tags','$sub_content','$content','')";
     $add_post_result = mysqli_query($conn,$add_post_sql);
+    
     if($add_post_result){
         echo '
         <script>alert("Blog Posted Successfully !")

@@ -35,40 +35,32 @@ if($_SERVER["REQUEST_METHOD"] == "GET"){
     <img src="../../img/logo.png" alt="Logo">
   </div>
 
+    <form action="search_pg.php" method="GET">
   <div class="search_bar">
     <div class="animated_input fade-in">
-      <input type="text" placeholder=" " id="searchInput" />
+      <input type="text" placeholder=" " id="searchInput" name="search" />
       <label for="searchInput" id="animated_placeholder">Search Technology</label>
     </div>
-    <button>Search</button>
+    <button type="submit">Search</button>
   </div>
+</form>
 </header>
 
   <nav class="hot_topics">
   <div class="topic_links">
-    <a href="#">Technology</a>
-    <a href="#">Lifestyle</a>
-    <a href="#">Education</a>
-    <a href="#">Health</a>
-    <a href="#">Finance</a>
-    <a href="#">Technology</a>
-    <a href="#">Lifestyle</a>
-    <a href="#">Education</a>
-    <a href="#">Health</a>
-    <a href="#">Finance</a>
-    <a href="#">Technology</a>
-    <a href="#">Lifestyle</a>
-    <a href="#">Education</a>
-    <a href="#">Health</a>
-    <a href="#">Finance</a>
-    <a href="#">Technology</a>
-    <a href="#">Lifestyle</a>
-    <a href="#">Education</a>
-    <a href="#">Health</a>
-    <a href="#">Finance</a>
+  <?php
+    $category_sql = "SELECT * FROM `category`";
+    $category_result = mysqli_query($conn,$category_sql);
+
+    while($row = $category_result->fetch_assoc()){
+      $category = $row['category'];
+
+      echo '<a href="topic_list.php?category='.$category.'">'.$category.'</a>';
+    }
+  ?>
   </div>
 
- <div class="right_nav">
+ <!-- <div class="right_nav">
    
 
   <div class="dropdown_wrapper">
@@ -82,7 +74,7 @@ if($_SERVER["REQUEST_METHOD"] == "GET"){
       <option value="education">Education</option>
     </select>
   </div>
- </div>
+ </div> -->
 </nav>
 
   <div class="detail_container">
@@ -165,7 +157,7 @@ if($_SERVER["REQUEST_METHOD"] == "GET"){
   <h3>Quick Links</h3>
   <ul>
     <li><a href="../../../index.php">Home</a></li>
-    <li><a href="/blogs.html">Blogs</a></li>
+    <li><a href="../../../index.php">Blogs</a></li>
     <li><a href="/about.html">About Us</a></li>
     <li><a href="/contact.html">Contact</a></li>
 

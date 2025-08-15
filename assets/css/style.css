@@ -145,20 +145,13 @@ header h1 img {
 
     
 
-    nav.hot_topics {
-      width: 100%;
-  background: #f8f9fc;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 8px 16px;
-  gap: 16px;
-  flex-wrap: wrap;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  border-bottom: 1px solid #ddd;
-  font-family: sans-serif;
-    position: sticky;
-
+.hot_topics {
+  position: sticky;
+  top: 0;
+  background: #fff; /* White background so text stays visible */
+  z-index: 1000;
+  padding: 10px 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 .topic_links {

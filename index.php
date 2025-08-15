@@ -4,6 +4,7 @@ include_once("assets/php/connection.php");
 if(!isset($_SESSION['username'])){
   header("Location: assets/php/user/user_login.php");
 }
+
 $show_post_sql = "SELECT * FROM `add_post`";
 $show_post_result = mysqli_query($conn,$show_post_sql);
 
@@ -24,44 +25,38 @@ $show_post_result = mysqli_query($conn,$show_post_sql);
     <img src="assets/img/logo.png" alt="Logo">
   </div>
 
+
+    <form action="assets/php/user/search_pg.php" method="GET">
   <div class="search_bar">
     <div class="animated_input fade-in">
-      <input type="text" placeholder=" " id="searchInput" />
+      <input type="text" placeholder=" " id="searchInput" name="search" />
       <label for="searchInput" id="animated_placeholder">Search Technology</label>
     </div>
-    <button>Search</button>
+    <button type="submit">Search</button>
   </div>
+</form>
 </header>
 
 
   <nav class="hot_topics">
   <div class="topic_links">
-    <a href="#">Technology</a>
-    <a href="#">Lifestyle</a>
-    <a href="#">Education</a>
-    <a href="#">Health</a>
-    <a href="#">Finance</a>
-    <a href="#">Technology</a>
-    <a href="#">Lifestyle</a>
-    <a href="#">Education</a>
-    <a href="#">Health</a>
-    <a href="#">Finance</a>
-    <a href="#">Technology</a>
-    <a href="#">Lifestyle</a>
-    <a href="#">Education</a>
-    <a href="#">Health</a>
-    <a href="#">Finance</a>
-    <a href="#">Technology</a>
-    <a href="#">Lifestyle</a>
-    <a href="#">Education</a>
-    <a href="#">Health</a>
-    <a href="#">Finance</a>
+
+  <?php
+    $category_sql = "SELECT * FROM `category`";
+    $category_result = mysqli_query($conn,$category_sql);
+
+    while($row = $category_result->fetch_assoc()){
+      $category = $row['category'];
+
+      echo '<a href="assets/php/user/topic_list.php?category='.$category.'">'.$category.'</a>';
+    }
+  ?>
   </div>
 
- <div class="right_nav">
+ <!-- <div class="right_nav"> -->
    
 
-  <div class="dropdown_wrapper">
+  <!-- <div class="dropdown_wrapper">
     <select id="topics" class="topic_dropdown">
       <option value=""> Favorite topic</option>
       <option value="technology">Technology</option>
@@ -71,8 +66,8 @@ $show_post_result = mysqli_query($conn,$show_post_sql);
       <option value="travel">Travel</option>
       <option value="education">Education</option>
     </select>
-  </div>
- </div>
+  </div> -->
+ <!-- </div> -->
 </nav>
   <section class="grid_posts">
 
@@ -103,8 +98,8 @@ $show_post_result = mysqli_query($conn,$show_post_sql);
     <div class="footer_section">
   <h3>Quick Links</h3>
   <ul>
-    <li><a href="/">Home</a></li>
-    <li><a href="/blogs.html">Blogs</a></li>
+    <li><a href="index.php">Home</a></li>
+    <li><a href="/index.php">Blogs</a></li>
     <li><a href="/about.html">About Us</a></li>
     <li><a href="/contact.html">Contact</a></li>
 
