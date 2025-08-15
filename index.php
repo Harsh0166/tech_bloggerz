@@ -79,6 +79,7 @@ $show_post_result = mysqli_query($conn,$show_post_sql);
     $title = $row['title'];
     $sub_content = $row['sub_content'];
     $image = $row['image'];
+    $blog_id = $row['sno'];
 
     echo '
   <div class="blog_box">
@@ -86,7 +87,7 @@ $show_post_result = mysqli_query($conn,$show_post_sql);
       <div class="content">
         <h3>'.$title.'</h3>
         <p>'.$sub_content.'</p>
-        <a href="#">Read  More</a>
+        <a href="assets/php/user/blog_detail.php?blog_id='.$blog_id.'">Read  More</a>
       </div>
     </div>';
   }

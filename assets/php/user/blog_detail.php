@@ -1,3 +1,18 @@
+<?php
+include_once("../connection.php");
+if(!isset($_SESSION['username'])){
+  header("Location: assets/php/user/user_login.php");
+}
+
+if($_SERVER["REQUEST_METHOD"] == "GET"){
+  $blog_id = $_GET['blog_id'];
+
+  $show_detail_sql = "SELECT * FROM `add_post` WHERE `sno`= '$blog_id'";
+  $show_detail_result = mysqli_query($conn,$show_detail_sql);
+
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,9 +21,9 @@
   <title>Blog Detail</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="../css/style2.css">
-  <link rel="stylesheet" href="../css/style.css">
-  <link rel="stylesheet" href="../js/script.js">
+  <link rel="stylesheet" href="../../css/style2.css">
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../js/script.js">
 
   <style>
     
@@ -72,24 +87,27 @@
   <div class="detail_container">
     
     <div class="blog_text">
-      <h2>Exploring the Future of AI</h2>
-      <p>
-        Artificial Intelligence (AI) is transforming the way we interact with technology. From smart assistants to autonomous vehicles, AI applications are becoming more prevalent and impactful. In this blog, we explore the trends, challenges, and future potential of AI in everyday life and business.
-      </p>
-      <p>
-        With rapid advancements in machine learning, natural language processing, and data analytics, the future of AI looks promising. However, ethical concerns and the need for robust governance frameworks remain crucial. Learn how AI will continue to shape innovation, industries, and society in the coming decades.
-      </p>
-    <p>
-        With rapid advancements in machine learning, natural language processing, and data analytics, the future of AI looks promising. However, ethical concerns and the need for robust governance frameworks remain crucial. Learn how AI will continue to shape innovation, industries, and society in the coming decades.
-      </p><p>
-        With rapid advancements in machine learning, natural language processing, and data analytics, the future of AI looks promising. However, ethical concerns and the need for robust governance frameworks remain crucial. Learn how AI will continue to shape innovation, industries, and society in the coming decades.
-      </p><p>
-        With rapid advancements in machine learning, natural language processing, and data analytics, the future of AI looks promising. However, ethical concerns and the need for robust governance frameworks remain crucial. Learn how AI will continue to shape innovation, industries, and society in the coming decades.
-      </p>
-      <div class="author_info">
+    <?php
+      while($row = $show_detail_result-> fetch_assoc()){
+        $title = $row['title'];
+        $content = $row['content'];
+        $datetime = $row['date_time'];
+        list($date, $time) = explode(" ", $datetime);
+
+
+        echo ' <h2>'.$title.'</h2>
+      <p>'.$content.'</p>
+      
+
+          <div class="author_info">
         <h4>Author: Jane Doe</h4>
-        <p>Published on: June 14, 2025</p>
-      </div>
+        <p>Published on: '.$date.'</p>
+      </div>';
+      }
+    ?>
+
+     
+  
 
       <div class="blog_actions">
         <div class="share_icons">
