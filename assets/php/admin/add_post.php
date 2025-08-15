@@ -50,16 +50,17 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 <body>
 <header class="topbar">
     <button class="menu-toggle" id="menuToggle">☰</button>
-    <h1>Add New Post</h1>
-</header>
+  <div class="logo">
+    <img src="../../img/logo.png" alt="Logo" style="width: 130px;">
+  </div></header></header>
 
 <aside class="sidebar" id="sidebar">
     <h2>Menu</h2>
     <ul>
-        <li><a href="index.html">Dashboard</a></li>
-        <li><a href="posts.html">Posts</a></li>
-        <li><a href="add_post.html" class="active">Add New Post</a></li>
-        <li><a href="categories.html">Categories</a></li>
+        <li><a href="admin_homepage.php">Dashboard</a></li>
+        <!-- <li><a href="posts.html">Posts</a></li> -->
+        <li><a href="add_post.php" class="active">Add New Post</a></li>
+        <!-- <li><a href="categories.html">Categories</a></li>
         <li><a href="comments.html">Comments</a></li>
         <li><a href="users.html">Users</a></li>
         <li><a href="add_user.html">Add New User</a></li>
@@ -67,7 +68,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
         <li><a href="settings.html">Settings</a></li>
         <li><a href="profile.html">Profile</a></li>
         <li><a href="../index.html">View Site</a></li>
-        <li><a href="logout.html">Logout</a></li>
+        <li><a href="logout.html">Logout</a></li> -->
     </ul>
 </aside>
 
@@ -78,14 +79,17 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 
         <input type="text" placeholder="Enter post title" name="title" required>
 
+
+
         <label>Category:</label>
-        <select required name="category">
+        <input type="text" placeholder="Enter post category" name="category" required>
+        <!-- <select required name="category">
             <option value="">Select Category</option>
             <option value="Technology">Technology</option>
             <option value="Lifestyle">Lifestyle</option>
             <option value="Business">Business</option>
             <option value="Travel">Travel</option>
-        </select>
+        </select> -->
 
         <label>Tags (comma separated):</label>
         <input type="text" placeholder="e.g. tech, coding, AI" name="tags">
